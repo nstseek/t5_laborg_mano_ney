@@ -51,7 +51,25 @@ end top;
 
 architecture Behavioral of top is
 
+	signal centesimos: std_logic_vector(6 downto 0);
+	signal segundos: std_logic_vector(5 downto 0);
+	signal s_minutos: std_logic_vector(3 downto 0);
+	signal quarto: std_logic_vector(1 downto 0);
+
 begin
+
+	contador: entity work.trab port map(clock => clock, 
+		reset => reset, 
+		carga => carga,
+		para_continua => para_continua,
+		novo_quarto => novo_quarto,
+		c_quarto => c_quarto, 
+		c_minutos => c_minutos,
+		c_segundos => c_segundos,
+		centesimos => centesimos,
+		segundos => segundos,
+		minutos => s_minutos,
+		quarto => quarto);	
 	
 
 end Behavioral;
