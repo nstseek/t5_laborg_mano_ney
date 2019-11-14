@@ -1,0 +1,6 @@
+V3 3
+FL C:/trab_laborg.vhd/trab.vhd 2019/11/07.00:45:21 O.61xd
+EN work/trab 1573094723 FL C:/trab_laborg.vhd/trab.vhd PB ieee/std_logic_1164 1308643377 \
+      PB ieee/std_logic_arith 1308643378
+AR work/trab/Behavioral 1573094724 \
+      FL C:/trab_laborg.vhd/trab.vhd EN work/trab 1573094723

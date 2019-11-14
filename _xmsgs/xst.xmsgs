@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">C:/trab_laborg.vhd/trab.vhd</arg>&quot; line <arg fmt="%d" index="2">63</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">s_centesimos</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">C:/trab_laborg.vhd/trab.vhd</arg>&quot; line <arg fmt="%d" index="2">64</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">s_segundos</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">C:/trab_laborg.vhd/trab.vhd</arg>&quot; line <arg fmt="%d" index="2">65</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">s_minutos</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">C:/trab_laborg.vhd/trab.vhd</arg>&quot; line <arg fmt="%d" index="2">63</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">s_centesimos</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">C:/trab_laborg.vhd/trab.vhd</arg>&quot; line <arg fmt="%d" index="2">64</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">s_segundos</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2094" delta="new" >&quot;<arg fmt="%s" index="1">C:/trab_laborg.vhd/trab.vhd</arg>&quot; line <arg fmt="%d" index="2">65</arg>: Default value is ignored for signal &lt;<arg fmt="%s" index="3">s_minutos</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">C:/trab_laborg.vhd/trab.vhd</arg>&quot; line <arg fmt="%d" index="2">129</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<arg fmt="%s" index="3">&lt;rst_centesimos&gt;, &lt;rst_segundos&gt;, &lt;rst_minutos&gt;</arg>
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">rst_segundos</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00000000000000000000000000000000</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">rst_minutos</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00000000000000000000000000001111</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">rst_centesimos</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00000000000000000000000000000000</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">end_quarto</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">clk_half_const</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00000000000000000000000000011001</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">clk_full_const</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">00000000000000000000000000110001</arg>.
+</msg>
+
+</messages>
+
