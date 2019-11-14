@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
 
 entity Debounce is          
-  generic(NUMERO_COUNT: integer := 4000);
+  generic(NUMERO_COUNT: integer := 12500000);
   port(clock: in STD_LOGIC;
        reset_N: in STD_LOGIC;
        key: in STD_LOGIC;
@@ -18,7 +18,7 @@ architecture Debounce of Debounce is
 begin
   process(reset_N, clock)
   begin
-    if(clock'event and clock='0') then    -- borda de descida do clock da máquina
+    if(clock'event and clock='0') then    -- borda de descida do clock da mquina
       if(reset_N='0') then
         EA <= S1;
       else  

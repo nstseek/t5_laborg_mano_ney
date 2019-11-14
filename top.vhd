@@ -55,22 +55,68 @@ architecture Behavioral of top is
 	signal segundos: std_logic_vector(5 downto 0);
 	signal s_minutos: std_logic_vector(3 downto 0);
 	signal quarto: std_logic_vector(1 downto 0);
-
+	
+	signal d1: std_logic_vector(5 downto 0);
+	signal d2: std_logic_vector(5 downto 0);
+	signal d3: std_logic_vector(5 downto 0);
+	signal d4: std_logic_vector(5 downto 0);
+	
+	signal s_para_continua: std_logic;
+	signal s_novo_quarto: std_logic;
+	signal s_carga: std_logic;
+	signal clk_100hz: std_logic;
+	signal reset_N: std_logic;
+	
 begin
+
+	reset_N <= not reset;
 
 	contador: entity work.trab port map(clock => clock, 
 		reset => reset, 
-		carga => carga,
-		para_continua => para_continua,
-		novo_quarto => novo_quarto,
+		carga => s_carga,
+		para_continua => s_para_continua,
+		novo_quarto => s_novo_quarto,
 		c_quarto => c_quarto, 
 		c_minutos => c_minutos,
 		c_segundos => c_segundos,
 		centesimos => centesimos,
 		segundos => segundos,
 		minutos => s_minutos,
-		quarto => quarto);	
+		quarto => quarto,
+		clk_div => clk_100hz);
+		
+	display: entity work.dspl_drv port map(
+		clock => clock,
+		reset => reset,
+		dec_ddp => DSPL_cent_seg,
+		an => anodo,
+		d1 => d1,
+		d2 => d2,
+		d3 => d3,
+		d4 => d4
+	);
 	
+	debounce_carga: entity work.Debounce port map(
+		clock => clk_100hz,
+		reset_N => reset,
+		key => carga,
+		debkey => s_carga
+	);
+	
+	debounce_para_cont: entity work.Debounce port map(
+		clock => clk_100hz,
+		reset_N => reset,
+		key => para_continua,
+		debkey => s_para_continua
+	);
+	
+	debounce_n_quarto: entity work.Debounce port map(
+		clock => clk_100hz,
+		reset_N => reset_N,
+		key => novo_quarto,
+		debkey => s_novo_quarto
+	);
+
 
 end Behavioral;
 
