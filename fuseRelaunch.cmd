@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/trab_laborg.vhd/trab_isim_beh.exe" -prj "C:/trab_laborg.vhd/trab_beh.prj" "work.trab" 
