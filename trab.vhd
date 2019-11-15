@@ -45,27 +45,30 @@ entity trab is PORT (
 	centesimos : out STD_LOGIC_VECTOR (6 downto 0);
 	segundos : out STD_LOGIC_VECTOR (5 downto 0);
 	minutos : out STD_LOGIC_VECTOR (3 downto 0);
-	quarto : out STD_LOGIC_VECTOR (1 downto 0)
+	quarto : out STD_LOGIC_VECTOR (1 downto 0);
+	
+	clk_div: out STD_LOGIC
 );
 end trab;
 
 architecture Behavioral of trab is
 
-	signal clk_half_const: INTEGER:= 25;
-	signal clk_full_const: INTEGER:= 49;
+	signal clk_half_const: INTEGER:= 250000;
+	signal clk_full_const: INTEGER:= 499999;
 	signal clk_100hz: STD_LOGIC:= '0';
 	signal clk_100hz_counter: INTEGER:= 0;
 	
 	signal rst_centesimos: INTEGER:= 0;
 	signal rst_segundos: INTEGER:= 0;
 	signal rst_minutos: INTEGER:= 15;
+	signal rst_quarto: INTEGER:= 1;
 	
 	signal s_centesimos: INTEGER:= rst_centesimos;
 	signal s_segundos: INTEGER:= rst_segundos;
 	signal s_minutos: INTEGER:= rst_minutos;
 	
 	signal end_quarto: STD_LOGIC:= '0';
-	signal s_quarto: INTEGER:= 1;
+	signal s_quarto: INTEGER:= rst_quarto;
 	
 	signal count: INTEGER:= 1;
 	
@@ -78,7 +81,8 @@ begin
 	centesimos <= conv_std_logic_vector(s_centesimos, centesimos'length);
 	segundos <= conv_std_logic_vector(s_segundos, segundos'length);
 	minutos <= conv_std_logic_vector(s_minutos, minutos'length);
-	quarto <= conv_std_logic_vector(s_quarto, quarto'length);
+	quarto <= conv_std_logic_vector((s_quarto - 1), quarto'length);
+	clk_div <= clk_100hz;
 	
 	with c_quarto select quart <=
 		1 when "00",
@@ -132,6 +136,7 @@ begin
 			s_centesimos <= rst_centesimos;
 			s_segundos <= rst_segundos;
 			s_minutos <= rst_minutos;
+			s_quarto <= rst_quarto;
 			count <= 0;
 		elsif clk_100hz'event and clk_100hz = '1' then
 			if para_continua = '1' then
@@ -152,14 +157,16 @@ begin
 					s_minutos <= rst_minutos;
 					end_quarto <= '0';
 					s_quarto <= s_quarto + count;
+					count <= 0;
 				else
 					s_centesimos <= rst_centesimos;
 					s_segundos <= rst_segundos;
 					s_minutos <= rst_minutos;
 					end_quarto <= '0';
 					s_quarto <= 1;
+					count <= 0;
 				end if;
-			else
+			elsif count = 1 then
 				if s_centesimos > 0 then
 					s_centesimos <= s_centesimos - count;
 				elsif s_segundos > 0 then

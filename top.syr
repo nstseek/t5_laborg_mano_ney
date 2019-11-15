@@ -1,0 +1,688 @@
+Release 13.2 - xst O.61xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s100e-4-tq144
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "//vboxsrv/data/t5_laborg_mano_ney/trab.vhd" in Library work.
+Entity <trab> compiled.
+Entity <trab> (Architecture <behavioral>) compiled.
+Compiling vhdl file "//vboxsrv/data/t5_laborg_mano_ney/dspl_drv_nexys.vhd" in Library work.
+Architecture dspl_drv of Entity dspl_drv is up to date.
+Compiling vhdl file "//vboxsrv/data/t5_laborg_mano_ney/debouncezao.vhd" in Library work.
+Architecture behavioral of Entity debouncezao is up to date.
+Compiling vhdl file "//vboxsrv/data/t5_laborg_mano_ney/top.vhd" in Library work.
+Architecture behavioral of Entity top is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <top> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <trab> in library <work> (architecture <Behavioral>).
+WARNING:Xst:2094 - "//vboxsrv/data/t5_laborg_mano_ney/trab.vhd" line 66: Default value is ignored for signal <s_centesimos>.
+WARNING:Xst:2094 - "//vboxsrv/data/t5_laborg_mano_ney/trab.vhd" line 67: Default value is ignored for signal <s_segundos>.
+WARNING:Xst:2094 - "//vboxsrv/data/t5_laborg_mano_ney/trab.vhd" line 68: Default value is ignored for signal <s_minutos>.
+WARNING:Xst:2094 - "//vboxsrv/data/t5_laborg_mano_ney/trab.vhd" line 71: Default value is ignored for signal <s_quarto>.
+
+Analyzing hierarchy for entity <dspl_drv> in library <work> (architecture <dspl_drv>).
+
+Analyzing hierarchy for entity <debouncezao> in library <work> (architecture <Behavioral>) with generics.
+	clocks_interval = 50
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <top> in library <work> (Architecture <behavioral>).
+Entity <top> analyzed. Unit <top> generated.
+
+Analyzing Entity <trab> in library <work> (Architecture <Behavioral>).
+WARNING:Xst:2094 - "//vboxsrv/data/t5_laborg_mano_ney/trab.vhd" line 66: Default value is ignored for signal <s_centesimos>.
+WARNING:Xst:2094 - "//vboxsrv/data/t5_laborg_mano_ney/trab.vhd" line 67: Default value is ignored for signal <s_segundos>.
+WARNING:Xst:2094 - "//vboxsrv/data/t5_laborg_mano_ney/trab.vhd" line 68: Default value is ignored for signal <s_minutos>.
+WARNING:Xst:2094 - "//vboxsrv/data/t5_laborg_mano_ney/trab.vhd" line 71: Default value is ignored for signal <s_quarto>.
+WARNING:Xst:819 - "//vboxsrv/data/t5_laborg_mano_ney/trab.vhd" line 133: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <rst_centesimos>, <rst_segundos>, <rst_minutos>, <rst_quarto>
+Entity <trab> analyzed. Unit <trab> generated.
+
+Analyzing Entity <dspl_drv> in library <work> (Architecture <dspl_drv>).
+Entity <dspl_drv> analyzed. Unit <dspl_drv> generated.
+
+Analyzing generic Entity <debouncezao> in library <work> (Architecture <Behavioral>).
+	clocks_interval = 50
+Entity <debouncezao> analyzed. Unit <debouncezao> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <trab>.
+    Related source file is "//vboxsrv/data/t5_laborg_mano_ney/trab.vhd".
+WARNING:Xst:653 - Signal <rst_segundos> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <rst_quarto> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000001.
+WARNING:Xst:653 - Signal <rst_minutos> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000001111.
+WARNING:Xst:653 - Signal <rst_centesimos> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <clk_half_const> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000111101000010010000.
+WARNING:Xst:653 - Signal <clk_full_const> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000001111010000100011111.
+    Found finite state machine <FSM_0> for signal <count>.
+    -----------------------------------------------------------------------
+    | States             | 2                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk_100hz                 (rising_edge)        |
+    | Clock enable       | count$not0000             (positive)           |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00000000000000000000000000000000               |
+    | Power Up State     | 00000000000000000000000000000001               |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4x3-bit ROM for signal <quart>.
+    Found 16x4-bit ROM for signal <min>.
+    Found 4x6-bit ROM for signal <seg>.
+    Found 2-bit subtractor for signal <quarto>.
+    Found 1-bit register for signal <clk_100hz>.
+    Found 32-bit comparator less for signal <clk_100hz$cmp_lt0000> created at line 120.
+    Found 32-bit up counter for signal <clk_100hz_counter>.
+    Found 1-bit register for signal <end_quarto>.
+    Found 32-bit comparator greater for signal <end_quarto$cmp_gt0000> created at line 174.
+    Found 32-bit register for signal <s_centesimos>.
+    Found 32-bit subtractor for signal <s_centesimos$addsub0000> created at line 171.
+    Found 32-bit comparator greater for signal <s_centesimos$cmp_gt0000> created at line 170.
+    Found 32-bit comparator lessequal for signal <s_centesimos$cmp_le0000> created at line 174.
+    Found 32-bit comparator lessequal for signal <s_centesimos$cmp_le0001> created at line 171.
+    Found 32-bit comparator lessequal for signal <s_centesimos$cmp_le0002> created at line 170.
+    Found 32-bit register for signal <s_minutos>.
+    Found 32-bit subtractor for signal <s_minutos$addsub0000> created at line 178.
+    Found 32-bit comparator greater for signal <s_minutos$cmp_gt0000> created at line 171.
+    Found 32-bit register for signal <s_quarto>.
+    Found 32-bit adder for signal <s_quarto$addsub0000> created at line 159.
+    Found 32-bit comparator less for signal <s_quarto$cmp_lt0000> created at line 154.
+    Found 32-bit register for signal <s_segundos>.
+    Found 32-bit subtractor for signal <s_segundos$addsub0000> created at line 174.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   3 ROM(s).
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+	inferred   5 Adder/Subtractor(s).
+	inferred   8 Comparator(s).
+Unit <trab> synthesized.
+
+
+Synthesizing Unit <dspl_drv>.
+    Related source file is "//vboxsrv/data/t5_laborg_mano_ney/dspl_drv_nexys.vhd".
+    Found 16x7-bit ROM for signal <selected_dig_4_1$rom0000>.
+    Found 4-bit register for signal <an>.
+    Found 4-bit 4-to-1 multiplexer for signal <an$mux0003>.
+    Found 1-bit register for signal <ck_1KHz>.
+    Found 15-bit adder for signal <ck_1KHz$addsub0000> created at line 75.
+    Found 15-bit up counter for signal <count_25K>.
+    Found 2-bit register for signal <dig_selection>.
+    Found 5-bit register for signal <selected_dig>.
+    Found 5-bit 4-to-1 multiplexer for signal <selected_dig$mux0003>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   1 Counter(s).
+	inferred  12 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   9 Multiplexer(s).
+Unit <dspl_drv> synthesized.
+
+
+Synthesizing Unit <debouncezao>.
+    Related source file is "//vboxsrv/data/t5_laborg_mano_ney/debouncezao.vhd".
+    Found 32-bit up counter for signal <clocks_passed>.
+    Found 32-bit comparator greatequal for signal <clocks_passed$cmp_ge0000> created at line 60.
+    Found 1-bit register for signal <key_output>.
+    Found 1-bit register for signal <key_pressed>.
+    Found 1-bit register for signal <waiting_for_release>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   3 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <debouncezao> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "//vboxsrv/data/t5_laborg_mano_ney/top.vhd".
+WARNING:Xst:1780 - Signal <segundos_dec> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <reset_N> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <d4_int> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <d3_int> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <d2_int> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <d1_int> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <centesimos_dec> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 64x12-bit ROM for signal <segundos_int$rom0000>.
+    Found 128x12-bit ROM for signal <centesimos_int$rom0000>.
+    Found 1-of-4 decoder for signal <quarto_led>.
+    Summary:
+	inferred   2 ROM(s).
+	inferred   1 Decoder(s).
+Unit <top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 6
+ 128x12-bit ROM                                        : 1
+ 16x4-bit ROM                                          : 1
+ 16x7-bit ROM                                          : 1
+ 4x3-bit ROM                                           : 1
+ 4x6-bit ROM                                           : 1
+ 64x12-bit ROM                                         : 1
+# Adders/Subtractors                                   : 6
+ 15-bit adder                                          : 1
+ 2-bit subtractor                                      : 1
+ 32-bit adder                                          : 1
+ 32-bit subtractor                                     : 3
+# Counters                                             : 5
+ 15-bit up counter                                     : 1
+ 32-bit up counter                                     : 4
+# Registers                                            : 19
+ 1-bit register                                        : 12
+ 2-bit register                                        : 1
+ 32-bit register                                       : 4
+ 4-bit register                                        : 1
+ 5-bit register                                        : 1
+# Comparators                                          : 11
+ 32-bit comparator greatequal                          : 3
+ 32-bit comparator greater                             : 3
+ 32-bit comparator less                                : 2
+ 32-bit comparator lessequal                           : 3
+# Multiplexers                                         : 2
+ 4-bit 4-to-1 multiplexer                              : 1
+ 5-bit 4-to-1 multiplexer                              : 1
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <contador/count/FSM> on signal <count[1:1]> with sequential encoding.
+----------------------------------------------
+ State                            | Encoding
+----------------------------------------------
+ 00000000000000000000000000000001 | 0
+ 00000000000000000000000000000000 | 1
+----------------------------------------------
+
+Synthesizing (advanced) Unit <dspl_drv>.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom_selected_dig_4_1_rom0000> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <dspl_drv> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# ROMs                                                 : 6
+ 128x12-bit ROM                                        : 1
+ 16x4-bit ROM                                          : 1
+ 16x7-bit ROM                                          : 1
+ 4x3-bit ROM                                           : 1
+ 4x6-bit ROM                                           : 1
+ 64x12-bit ROM                                         : 1
+# Adders/Subtractors                                   : 6
+ 15-bit adder                                          : 1
+ 2-bit subtractor                                      : 1
+ 32-bit adder                                          : 1
+ 32-bit subtractor                                     : 3
+# Counters                                             : 5
+ 15-bit up counter                                     : 1
+ 32-bit up counter                                     : 4
+# Registers                                            : 23
+ Flip-Flops                                            : 23
+# Comparators                                          : 11
+ 32-bit comparator greatequal                          : 3
+ 32-bit comparator greater                             : 3
+ 32-bit comparator less                                : 2
+ 32-bit comparator lessequal                           : 3
+# Multiplexers                                         : 2
+ 4-bit 4-to-1 multiplexer                              : 1
+ 5-bit 4-to-1 multiplexer                              : 1
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <top> ...
+
+Optimizing unit <dspl_drv> ...
+
+Optimizing unit <debouncezao> ...
+
+Optimizing unit <trab> ...
+WARNING:Xst:1710 - FF/Latch <display/selected_dig_0> (without init value) has a constant value of 1 in block <top>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 44.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 294
+ Flip-Flops                                            : 294
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 33
+
+Cell Usage :
+# BELS                             : 1492
+#      GND                         : 1
+#      INV                         : 121
+#      LUT1                        : 193
+#      LUT2                        : 99
+#      LUT2_D                      : 1
+#      LUT2_L                      : 2
+#      LUT3                        : 99
+#      LUT3_D                      : 1
+#      LUT4                        : 253
+#      LUT4_L                      : 17
+#      MUXCY                       : 389
+#      MUXF5                       : 25
+#      MUXF6                       : 4
+#      VCC                         : 1
+#      XORCY                       : 286
+# FlipFlops/Latches                : 294
+#      FDC                         : 17
+#      FDCE                        : 1
+#      FDCE_1                      : 9
+#      FDCPE                       : 128
+#      FDE                         : 101
+#      FDP                         : 4
+#      FDPE                        : 1
+#      FDR                         : 33
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 32
+#      IBUF                        : 12
+#      OBUF                        : 20
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100etq144-4 
+
+ Number of Slices:                      415  out of    960    43%  
+ Number of Slice Flip Flops:            294  out of   1920    15%  
+ Number of 4 input LUTs:                786  out of   1920    40%  
+ Number of IOs:                          33
+ Number of bonded IOBs:                  33  out of    108    30%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-----------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)       | Load  |
+-----------------------------------+-----------------------------+-------+
+clock                              | BUFGP                       | 49    |
+display/ck_1KHz                    | NONE(display/selected_dig_4)| 10    |
+contador/clk_100hz1                | BUFG                        | 235   |
+-----------------------------------+-----------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+----------------------------------------+------------------------------+-------+
+Control Signal                          | Buffer(FF name)              | Load  |
+----------------------------------------+------------------------------+-------+
+reset                                   | IBUF                         | 160   |
+Mrom_centesimos_int_rom000010(XST_GND:G)| NONE(contador/s_centesimos_0)| 128   |
+----------------------------------------+------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 12.986ns (Maximum Frequency: 77.005MHz)
+   Minimum input arrival time before clock: 6.297ns
+   Maximum output required time after clock: 5.870ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 8.235ns (frequency: 121.433MHz)
+  Total number of paths / destination ports: 3741 / 82
+-------------------------------------------------------------------------
+Delay:               8.235ns (Levels of Logic = 18)
+  Source:            display/count_25K_1 (FF)
+  Destination:       display/count_25K_14 (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: display/count_25K_1 to display/count_25K_14
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.591   0.622  display/count_25K_1 (display/count_25K_1)
+     LUT1:I0->O            1   0.704   0.000  display/Madd_ck_1KHz_addsub0000_cy<1>_rt (display/Madd_ck_1KHz_addsub0000_cy<1>_rt)
+     MUXCY:S->O            1   0.464   0.000  display/Madd_ck_1KHz_addsub0000_cy<1> (display/Madd_ck_1KHz_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  display/Madd_ck_1KHz_addsub0000_cy<2> (display/Madd_ck_1KHz_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  display/Madd_ck_1KHz_addsub0000_cy<3> (display/Madd_ck_1KHz_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  display/Madd_ck_1KHz_addsub0000_cy<4> (display/Madd_ck_1KHz_addsub0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  display/Madd_ck_1KHz_addsub0000_cy<5> (display/Madd_ck_1KHz_addsub0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  display/Madd_ck_1KHz_addsub0000_cy<6> (display/Madd_ck_1KHz_addsub0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  display/Madd_ck_1KHz_addsub0000_cy<7> (display/Madd_ck_1KHz_addsub0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  display/Madd_ck_1KHz_addsub0000_cy<8> (display/Madd_ck_1KHz_addsub0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  display/Madd_ck_1KHz_addsub0000_cy<9> (display/Madd_ck_1KHz_addsub0000_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  display/Madd_ck_1KHz_addsub0000_cy<10> (display/Madd_ck_1KHz_addsub0000_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  display/Madd_ck_1KHz_addsub0000_cy<11> (display/Madd_ck_1KHz_addsub0000_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  display/Madd_ck_1KHz_addsub0000_cy<12> (display/Madd_ck_1KHz_addsub0000_cy<12>)
+     MUXCY:CI->O           0   0.059   0.000  display/Madd_ck_1KHz_addsub0000_cy<13> (display/Madd_ck_1KHz_addsub0000_cy<13>)
+     XORCY:CI->O           1   0.804   0.595  display/Madd_ck_1KHz_addsub0000_xor<14> (display/ck_1KHz_addsub0000<14>)
+     LUT2_D:I0->O         15   0.704   1.192  display/ck_1KHz_cmp_eq00000 (display/ck_1KHz_cmp_eq00000)
+     LUT4_L:I0->LO         1   0.704   0.135  display/Mcount_count_25K_eqn_91_G (N103)
+     LUT3:I2->O            1   0.704   0.000  display/Mcount_count_25K_eqn_911 (display/Mcount_count_25K_eqn_9)
+     FDC:D                     0.308          display/count_25K_9
+    ----------------------------------------
+    Total                      8.235ns (5.691ns logic, 2.544ns route)
+                                       (69.1% logic, 30.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'display/ck_1KHz'
+  Clock period: 3.082ns (frequency: 324.465MHz)
+  Total number of paths / destination ports: 22 / 10
+-------------------------------------------------------------------------
+Delay:               3.082ns (Levels of Logic = 2)
+  Source:            display/dig_selection_0 (FF)
+  Destination:       display/selected_dig_4 (FF)
+  Source Clock:      display/ck_1KHz rising
+  Destination Clock: display/ck_1KHz rising
+
+  Data Path: display/dig_selection_0 to display/selected_dig_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             13   0.591   1.158  display/dig_selection_0 (display/dig_selection_0)
+     LUT3:I0->O            1   0.704   0.000  display/Mmux_selected_dig_mux0003_31 (display/Mmux_selected_dig_mux0003_31)
+     MUXF5:I1->O           1   0.321   0.000  display/Mmux_selected_dig_mux0003_2_f5_0 (display/selected_dig_mux0003<1>)
+     FDE:D                     0.308          display/selected_dig_1
+    ----------------------------------------
+    Total                      3.082ns (1.924ns logic, 1.158ns route)
+                                       (62.4% logic, 37.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'contador/clk_100hz1'
+  Clock period: 12.986ns (frequency: 77.005MHz)
+  Total number of paths / destination ports: 27394 / 470
+-------------------------------------------------------------------------
+Delay:               6.493ns (Levels of Logic = 3)
+  Source:            debounce_n_quarto/key_output (FF)
+  Destination:       contador/s_minutos_31 (FF)
+  Source Clock:      contador/clk_100hz1 falling
+  Destination Clock: contador/clk_100hz1 rising
+
+  Data Path: debounce_n_quarto/key_output to contador/s_minutos_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE_1:C->Q          19   0.591   1.089  debounce_n_quarto/key_output (debounce_n_quarto/key_output)
+     LUT4:I3->O            1   0.704   0.000  contador/s_quarto_not00011_F (N84)
+     MUXF5:I0->O          34   0.321   1.267  contador/s_quarto_not00011 (contador/s_quarto_not0001)
+     LUT4:I3->O           32   0.704   1.262  contador/s_segundos_not00011 (contador/s_segundos_not0001)
+     FDCPE:CE                  0.555          contador/s_segundos_31
+    ----------------------------------------
+    Total                      6.493ns (2.875ns logic, 3.618ns route)
+                                       (44.3% logic, 55.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'display/ck_1KHz'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.384ns (Levels of Logic = 2)
+  Source:            reset (PAD)
+  Destination:       display/selected_dig_4 (FF)
+  Destination Clock: display/ck_1KHz rising
+
+  Data Path: reset to display/selected_dig_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           214   1.218   1.320  reset_IBUF (reset_IBUF)
+     INV:I->O              4   0.704   0.587  display/reset_inv1_INV_0 (display/reset_inv)
+     FDE:CE                    0.555          display/selected_dig_1
+    ----------------------------------------
+    Total                      4.384ns (2.477ns logic, 1.907ns route)
+                                       (56.5% logic, 43.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'contador/clk_100hz1'
+  Total number of paths / destination ports: 546 / 330
+-------------------------------------------------------------------------
+Offset:              6.297ns (Levels of Logic = 3)
+  Source:            reset (PAD)
+  Destination:       debounce_n_quarto/clocks_passed_31 (FF)
+  Destination Clock: contador/clk_100hz1 falling
+
+  Data Path: reset to debounce_n_quarto/clocks_passed_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           214   1.218   1.399  reset_IBUF (reset_IBUF)
+     LUT2:I1->O            1   0.704   0.455  debounce_para_cont/clocks_passed_and0001_SW0 (N42)
+     LUT4:I2->O           32   0.704   1.262  debounce_para_cont/clocks_passed_and0001 (debounce_para_cont/clocks_passed_and0001)
+     FDE:CE                    0.555          debounce_para_cont/clocks_passed_0
+    ----------------------------------------
+    Total                      6.297ns (3.181ns logic, 3.116ns route)
+                                       (50.5% logic, 49.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'display/ck_1KHz'
+  Total number of paths / destination ports: 32 / 11
+-------------------------------------------------------------------------
+Offset:              5.870ns (Levels of Logic = 2)
+  Source:            display/selected_dig_2 (FF)
+  Destination:       DSPL_cent_seg<7> (PAD)
+  Source Clock:      display/ck_1KHz rising
+
+  Data Path: display/selected_dig_2 to DSPL_cent_seg<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              7   0.591   0.883  display/selected_dig_2 (display/selected_dig_2)
+     LUT4:I0->O            1   0.704   0.420  display/Mrom_selected_dig_4_1_rom000021 (DSPL_cent_seg_5_OBUF)
+     OBUF:I->O                 3.272          DSPL_cent_seg_5_OBUF (DSPL_cent_seg<5>)
+    ----------------------------------------
+    Total                      5.870ns (4.567ns logic, 1.303ns route)
+                                       (77.8% logic, 22.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'contador/clk_100hz1'
+  Total number of paths / destination ports: 12 / 8
+-------------------------------------------------------------------------
+Offset:              5.795ns (Levels of Logic = 2)
+  Source:            contador/s_quarto_0 (FF)
+  Destination:       quarto_led<3> (PAD)
+  Source Clock:      contador/clk_100hz1 rising
+
+  Data Path: contador/s_quarto_0 to quarto_led<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCPE:C->Q            5   0.591   0.808  contador/s_quarto_0 (contador/s_quarto_0)
+     LUT2:I0->O            1   0.704   0.420  Mdecod_quarto_led31 (quarto_led_3_OBUF)
+     OBUF:I->O                 3.272          quarto_led_3_OBUF (quarto_led<3>)
+    ----------------------------------------
+    Total                      5.795ns (4.567ns logic, 1.228ns route)
+                                       (78.8% logic, 21.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.20 secs
+ 
+--> 
+
+Total memory usage is 259752 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   23 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

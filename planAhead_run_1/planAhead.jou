@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# PlanAhead v13.2 (64-bit)
+# Build 131561 by hdbuild on Thu Jun 16 17:14:12 PDT 2011
+# Start of session at: Fri Nov 15 02:12:43 2019
+# Process ID: 4420
+# Log file: E:/t5_laborg_mano_ney/planAhead_run_1/planAhead.log
+# Journal file: E:/t5_laborg_mano_ney/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source E:/t5_laborg_mano_ney/pa.fromNetlist.tcl
+exit
+stop_gui

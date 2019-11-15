@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "C:/trab_laborg.vhd/trab_isim_beh.exe" -prj "C:/trab_laborg.vhd/trab_beh.prj" "work.trab" 
+-intstyle "ise" -incremental -o "E:/t5_laborg_mano_ney/top_isim_beh.exe" -prj "E:/t5_laborg_mano_ney/top_beh.prj" "work.top" 

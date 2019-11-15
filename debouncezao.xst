@@ -1,0 +1,5 @@
+set -tmpdir "E:/t5_laborg_mano_ney/xst/projnav.tmp"
+set -xsthdpdir "E:/t5_laborg_mano_ney/xst"
+elaborate
+-ifn debouncezao.prj
+-ifmt mixed

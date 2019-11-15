@@ -1,2 +1,10 @@
-AR trab behavioral C:/trab_laborg.vhd/trab.vhd sub00/vhpl01 1573094724
-EN trab NULL C:/trab_laborg.vhd/trab.vhd sub00/vhpl00 1573094723
+AR trab behavioral //vboxsrv/data/t5_laborg_mano_ney/trab.vhd sub00/vhpl01 1573852958
+EN debounce NULL //vboxsrv/data/t5_laborg_mano_ney/debounce.vhd sub00/vhpl04 1573850512
+EN top NULL //vboxsrv/data/t5_laborg_mano_ney/top.vhd sub00/vhpl06 1573852963
+EN debouncezao NULL //vboxsrv/data/t5_laborg_mano_ney/debouncezao.vhd sub00/vhpl08 1573852961
+AR debounce debounce //vboxsrv/data/t5_laborg_mano_ney/debounce.vhd sub00/vhpl05 1573850513
+AR dspl_drv dspl_drv //vboxsrv/data/t5_laborg_mano_ney/dspl_drv_nexys.vhd sub00/vhpl03 1573852960
+AR debouncezao behavioral //vboxsrv/data/t5_laborg_mano_ney/debouncezao.vhd sub00/vhpl09 1573852962
+EN dspl_drv NULL //vboxsrv/data/t5_laborg_mano_ney/dspl_drv_nexys.vhd sub00/vhpl02 1573852959
+EN trab NULL //vboxsrv/data/t5_laborg_mano_ney/trab.vhd sub00/vhpl00 1573852957
+AR top behavioral //vboxsrv/data/t5_laborg_mano_ney/top.vhd sub00/vhpl07 1573852964

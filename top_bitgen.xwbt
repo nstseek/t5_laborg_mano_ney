@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\t5_laborg_mano_ney\top.ncd
+OUTFILE=E:\t5_laborg_mano_ney\top.bit
+FAMILY=Spartan3E
+PART=xc3s100e-4tq144
+WORKINGDIR=E:\t5_laborg_mano_ney
+LICENSE=WebPack
+USER_INFO=211729878_0_0_712

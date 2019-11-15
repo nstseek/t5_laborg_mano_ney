@@ -1,0 +1,4 @@
+vhdl work "trab.vhd"
+vhdl work "dspl_drv_nexys.vhd"
+vhdl work "debouncezao.vhd"
+vhdl work "top.vhd"

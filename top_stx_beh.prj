@@ -1,0 +1,4 @@
+vhdl isim_temp "trab.vhd"
+vhdl isim_temp "dspl_drv_nexys.vhd"
+vhdl isim_temp "debounce.vhd"
+vhdl isim_temp "top.vhd"

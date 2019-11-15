@@ -19,6 +19,7 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -67,11 +68,71 @@ architecture Behavioral of top is
 	signal clk_100hz: std_logic;
 	signal reset_N: std_logic;
 	
+	signal centesimos_int: integer:= 0;
+	signal centesimos_dec: integer:= 0;
+	signal segundos_int: integer:= 0;
+	signal segundos_dec: integer:= 0;
+	
+	signal d1_int: integer:= 0;
+	signal d2_int: integer:= 0;
+	signal d3_int: integer:= 0;
+	signal d4_int: integer:= 0;
+	
 begin
-
+	
+	minutos <= s_minutos;
+	with quarto select
+	quarto_led <= 	"0001" when "00",
+						"0010" when "01",
+						"0100" when "10",
+						"1000" when "11",
+						"1111" when others;
+	with segundos_int select -- decimal seg
+	d1 <= "100001" when 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9,
+			"100011" when 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19,
+			"100101" when 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29,
+			"100111" when 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39,
+			"101001" when 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49,
+			"101011" when 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59,
+			"101101" when others;
+	with segundos_int select -- unit seg
+	d2 <= "100001" when 0 | 10 | 20 | 30 | 40 | 50 | 60,
+			"100011" when 1 | 11 | 21 | 31 | 41 | 51,
+			"100101" when 2 | 12 | 22 | 32 | 42 | 52,
+			"100111" when 3 | 13 | 23 | 33 | 43 | 53,
+			"101001" when 4 | 14 | 24 | 34 | 44 | 54,
+			"101011" when 5 | 15 | 25 | 35 | 45 | 55,
+			"101101" when 6 | 16 | 26 | 36 | 46 | 56,
+			"101111" when 7 | 17 | 27 | 37 | 47 | 57,
+			"110001" when 8 | 18 | 28 | 38 | 48 | 58,
+			"110011" when others;
+	with centesimos_int select -- decimal cent
+	d3 <= "100001" when 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9,
+			"100011" when 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19,
+			"100101" when 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29,
+			"100111" when 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39,
+			"101001" when 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49,
+			"101011" when 50 | 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59,
+			"101101" when 60 | 61 | 62 | 63 | 64 | 65 | 66 | 67 | 68 | 69,
+			"101111" when 70 | 71 | 72 | 73 | 74 | 75 | 76 | 77 | 78 | 79,
+			"110001" when 80 | 81 | 82 | 83 | 84 | 85 | 86 | 87 | 88 | 89,
+			"110011" when others;
+	with centesimos_int select -- unit cent
+	d4 <= "100001" when 0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90,
+			"100011" when 1 | 11 | 21 | 31 | 41 | 51 | 61 | 71 | 81 | 91,
+			"100101" when 2 | 12 | 22 | 32 | 42 | 52 | 62 | 72 | 82 | 92,
+			"100111" when 3 | 13 | 23 | 33 | 43 | 53 | 63 | 73 | 83 | 93,
+			"101001" when 4 | 14 | 24 | 34 | 44 | 54 | 64 | 74 | 84 | 94,
+			"101011" when 5 | 15 | 25 | 35 | 45 | 55 | 65 | 75 | 85 | 95,
+			"101101" when 6 | 16 | 26 | 36 | 46 | 56 | 66 | 76 | 86 | 96,
+			"101111" when 7 | 17 | 27 | 37 | 47 | 57 | 67 | 77 | 87 | 97,
+			"110001" when 8 | 18 | 28 | 38 | 48 | 58 | 68 | 78 | 88 | 98,
+			"110011" when others;
 	reset_N <= not reset;
-
-	contador: entity work.trab port map(clock => clock, 
+	centesimos_int <= conv_integer(unsigned(centesimos));
+	segundos_int  <= conv_integer(unsigned(segundos));
+	contador: entity work.trab port map(
+		clock => clock, 
 		reset => reset, 
 		carga => s_carga,
 		para_continua => s_para_continua,
@@ -96,25 +157,25 @@ begin
 		d4 => d4
 	);
 	
-	debounce_carga: entity work.Debounce port map(
+	debounce_carga: entity work.debouncezao port map(
 		clock => clk_100hz,
-		reset_N => reset,
+		reset => reset,
 		key => carga,
-		debkey => s_carga
+		key_deb => s_carga
 	);
 	
-	debounce_para_cont: entity work.Debounce port map(
+	debounce_para_cont: entity work.debouncezao port map(
 		clock => clk_100hz,
-		reset_N => reset,
+		reset => reset,
 		key => para_continua,
-		debkey => s_para_continua
+		key_deb => s_para_continua
 	);
 	
-	debounce_n_quarto: entity work.Debounce port map(
+	debounce_n_quarto: entity work.debouncezao port map(
 		clock => clk_100hz,
-		reset_N => reset_N,
+		reset => reset,
 		key => novo_quarto,
-		debkey => s_novo_quarto
+		key_deb => s_novo_quarto
 	);
 
 

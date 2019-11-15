@@ -1,21 +1,2 @@
 ISim log file
-Running: C:\trab_laborg.vhd\trab_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/trab_laborg.vhd/trab_isim_beh.wdb 
-ISim O.61xd (signature 0x1cce1bb2)
-WARNING: A WEBPACK license was found.
-WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
-WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
-This is a Lite version of ISim.
-Time resolution is 1 ps
-# onerror resume
-# wave add /
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-# restart
-# isim force add /trab/clock 0 -radix bin -value 1 -radix bin -time 500 ps -repeat 1 ns
-# isim force add /trab/clock 0 -radix bin -value 1 -radix bin -time 500 ps -repeat 1 ns
-# run 4500001ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-# run 20ns
-# run 20ns
+Running: E:\t5_laborg_mano_ney\top_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb E:/t5_laborg_mano_ney/top_isim_beh.wdb 

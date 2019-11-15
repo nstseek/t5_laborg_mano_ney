@@ -2,29 +2,28 @@ Command line:
    trab_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  49261
+     -socket  49239
 
-Wed Nov 06 23:41:41 2019
+Fri Nov 15 19:05:27 2019
 
 
  Elaboration Time: 0.015625 sec
 
- Current Memory Usage: 497.865 Meg
+ Current Memory Usage: 497.959 Meg
 
- Total Signals          : 20
- Total Nets             : 44
- Total Signal Drivers   : 10
- Total Blocks           : 2
- Total Primitive Blocks : 2
- Total Processes        : 2
- Total Traceable Variables  : 8
- Total Scalar Nets and Variables : 404
-Total Line Count : 17
-Total Line Count : 17
+ Total Signals          : 29
+ Total Nets             : 49
+ Total Signal Drivers   : 16
+ Total Blocks           : 3
+ Total Primitive Blocks : 3
+ Total Processes        : 10
+ Total Traceable Variables  : 10
+ Total Scalar Nets and Variables : 427
+Total Line Count : 56
 
- Total Simulation Time: 5.98438 sec
+ Total Simulation Time: 0.0625 sec
 
- Current Memory Usage: 497.865 Meg
+ Current Memory Usage: 497.959 Meg
 
-Thu Nov 07 01:13:00 2019
+Fri Nov 15 19:05:33 2019
 

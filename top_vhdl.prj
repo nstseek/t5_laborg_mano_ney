@@ -1,0 +1,4 @@
+vhdl work "\\vboxsrv\data\t5_laborg_mano_ney\trab.vhd"
+vhdl work "\\vboxsrv\data\t5_laborg_mano_ney\dspl_drv_nexys.vhd"
+vhdl work "\\vboxsrv\data\t5_laborg_mano_ney\debouncezao.vhd"
+vhdl work "\\vboxsrv\data\t5_laborg_mano_ney\top.vhd"

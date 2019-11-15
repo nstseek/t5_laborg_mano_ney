@@ -1,6 +1,29 @@
-V3 3
+V3 19
+FL //vboxsrv/data/t5_laborg_mano_ney/debounce.vhd 2019/11/15.18:03:33 O.61xd
+EN work/Debounce 1573850512 FL //vboxsrv/data/t5_laborg_mano_ney/debounce.vhd \
+      PB ieee/std_logic_1164 1308643377 PB ieee/STD_LOGIC_UNSIGNED 1308643379
+AR work/Debounce/Debounce 1573850513 \
+      FL //vboxsrv/data/t5_laborg_mano_ney/debounce.vhd EN work/Debounce 1573850512
+FL //vboxsrv/data/t5_laborg_mano_ney/debouncezao.vhd 2019/11/15.19:16:25 O.61xd
+EN work/debouncezao 1573852961 \
+      FL //vboxsrv/data/t5_laborg_mano_ney/debouncezao.vhd PB ieee/std_logic_1164 1308643377
+AR work/debouncezao/Behavioral 1573852962 \
+      FL //vboxsrv/data/t5_laborg_mano_ney/debouncezao.vhd EN work/debouncezao 1573852961
+FL //vboxsrv/data/t5_laborg_mano_ney/dspl_drv_nexys.vhd 2019/11/14.23:00:38 O.61xd
+EN work/dspl_drv 1573852959 \
+      FL //vboxsrv/data/t5_laborg_mano_ney/dspl_drv_nexys.vhd \
+      PB ieee/std_logic_1164 1308643377 PB ieee/STD_LOGIC_UNSIGNED 1308643379
+AR work/dspl_drv/dspl_drv 1573852960 \
+      FL //vboxsrv/data/t5_laborg_mano_ney/dspl_drv_nexys.vhd EN work/dspl_drv 1573852959
+FL //vboxsrv/data/t5_laborg_mano_ney/top.vhd 2019/11/15.19:11:07 O.61xd
+EN work/top 1573852963 FL //vboxsrv/data/t5_laborg_mano_ney/top.vhd \
+      PB ieee/std_logic_1164 1308643377 PB ieee/std_logic_arith 1308643378
+AR work/top/Behavioral 1573852964 \
+      FL //vboxsrv/data/t5_laborg_mano_ney/top.vhd EN work/top 1573852963 \
+      CP work/trab CP work/dspl_drv CP work/debouncezao
+FL //vboxsrv/data/t5_laborg_mano_ney/trab.vhd 2019/11/15.19:22:25 O.61xd
+EN work/trab 1573852957 FL //vboxsrv/data/t5_laborg_mano_ney/trab.vhd \
+      PB ieee/std_logic_1164 1308643377 PB ieee/std_logic_arith 1308643378
+AR work/trab/Behavioral 1573852958 \
+      FL //vboxsrv/data/t5_laborg_mano_ney/trab.vhd EN work/trab 1573852957
 FL C:/trab_laborg.vhd/trab.vhd 2019/11/07.00:45:21 O.61xd
-EN work/trab 1573094723 FL C:/trab_laborg.vhd/trab.vhd PB ieee/std_logic_1164 1308643377 \
-      PB ieee/std_logic_arith 1308643378
-AR work/trab/Behavioral 1573094724 \
-      FL C:/trab_laborg.vhd/trab.vhd EN work/trab 1573094723
